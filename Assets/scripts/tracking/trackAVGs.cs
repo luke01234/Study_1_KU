@@ -15,7 +15,7 @@ public class trackAVGs : MonoBehaviour
 
     public Session uxfSession;
     //Define items to be reported
-    public string experimenter, subject, testType;
+    public string experimenter, subject, testType, model, skinTone;
 
     public int trialSamples, globalSamples = 0;
 
@@ -27,7 +27,6 @@ public class trackAVGs : MonoBehaviour
 
     public float trialStdGaze, globalStdGaze;
 
-    public List<float> trialGazeVals = new List<float>(), globalGazeVals = new List<float>();
 
     public float trialTotalDist, globalTotalDist;
 
@@ -36,6 +35,7 @@ public class trackAVGs : MonoBehaviour
     public float trialMedDist, globalMedDist;
 
     public float trialStdDist, globalStdDist;
+    public List<float> trialGazeVals = new List<float>(), globalGazeVals = new List<float>();
 
     public List<float> trialDistVals = new List<float>(), globalDistVals = new List<float>();
 
@@ -44,7 +44,7 @@ public class trackAVGs : MonoBehaviour
       //Reset the tracking elements
       proxemicsTracker = gameObject.GetComponent<trackFacing>();
 
-      //Set tje tpta;s fpr re[prtomg]
+      //set the totals for reporting
       trialSamples = proxemicsTracker.numSamples;
       
       trialTotalGaze = proxemicsTracker.totalGaze;
@@ -171,14 +171,16 @@ public class trackAVGs : MonoBehaviour
       //report values
       trial.result["Experimenter Name"]=experimenter;
       trial.result["Subject Name"]=subject;
+      trial.result["Agent Skintone"]=skinTone;
+      trial.result["Agent Model"]=model;
       trial.result["Test_Type"]=testType;
       trial.result["Subject ID"]=trial.result["ppid"];
       trial.result["Session"]="1";
       trial.result["File Path"]="test";
       trial.result["Task"]="Cliff Walk";
       
-      trial.result["subject_average proxemics_location_0"]="Luke Attard";
-      trial.result["subject_proxemics_location_0"]="Luke Attard";
+      //trial.result["subject_proxemics_location_0"]="Luke Attard";
+      //trial.result["subject_average proxemics_location_0"]="Luke Attard";
       
       trial.result["trial average distance"]=trialMeanDist;
       trial.result["trial median distance"]=trialMedDist;

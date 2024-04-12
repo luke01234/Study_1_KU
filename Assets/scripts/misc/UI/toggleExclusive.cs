@@ -7,10 +7,12 @@ public class toggleExclusive : MonoBehaviour
     public Toggle toggle1;
     public Toggle toggle2;
     public chooseAgent chooseScript;
+    public string curModel;
     private void Start()
     {
         //set toggle 1 on by default, listen for changes in the toggles, if there is a change in one, make the opposite change to another
         toggle1.isOn=true;
+        curModel = "Female";
         toggle1.onValueChanged.AddListener(delegate { OnToggleValueChanged(toggle1); });
         toggle2.onValueChanged.AddListener(delegate { OnToggleValueChanged(toggle2); });
     }
@@ -24,10 +26,12 @@ public class toggleExclusive : MonoBehaviour
             if (toggle == toggle1)
             {
                 toggle2.isOn = false;
+                curModel = "Female";
             }
             else if (toggle == toggle2)
             {
                 toggle1.isOn = false;
+                curModel = "Male";
             }
         }
         else
@@ -36,10 +40,12 @@ public class toggleExclusive : MonoBehaviour
             if (toggle == toggle1)
             {
                 toggle2.isOn = true;
+                curModel = "Male";
             }
             else if (toggle == toggle2)
             {
                 toggle1.isOn = true;
+                curModel = "Female";
             }
         }
         chooseScript.maleFigure = toggle2.isOn;

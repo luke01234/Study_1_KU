@@ -17,7 +17,7 @@ public class trackFacing : Tracker
     private float FOV = 180;
 
     public int numSamples = 0;
-    public override string MeasurementDescriptor => "Proxemics";
+    public override string MeasurementDescriptor => "Subject_Proxemics";
 
     public override IEnumerable<string> CustomHeader => new string[] { "distance", "gaze" };
 

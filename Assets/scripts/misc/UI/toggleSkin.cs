@@ -7,10 +7,12 @@ public class toggleSkin : MonoBehaviour
     // Public array of Toggle objects
     public Toggle[] exclusiveToggles;
     public chooseAgent chooseScript;
+    public string skinTone;
 
     private void Start()
     { 
         chooseScript.setSkin("skintone 5");
+        skinTone = "skintone 5";
         // Subscribe to the onValueChanged event of each toggle
         foreach (Toggle toggle in exclusiveToggles)
         {
@@ -27,7 +29,7 @@ public class toggleSkin : MonoBehaviour
         if (isOn)
         {
             chooseScript.setSkin(currentToggle.name);
-
+            skinTone = currentToggle.name;
             // If a toggle is turned on, turn off all other toggles
             foreach (Toggle toggle in exclusiveToggles)
             {
