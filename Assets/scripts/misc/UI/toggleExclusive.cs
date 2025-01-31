@@ -48,7 +48,7 @@ public class toggleExclusive : MonoBehaviour
                 curModel = "Female";
             }
         }
-        chooseScript.maleFigure = toggle2.isOn;
-        chooseScript.setModel();
+        chooseScript.maleFigure = toggle2.isOn; //set the value depending on the toggle
+        chooseScript.setModel(); //set the model
     }
 }

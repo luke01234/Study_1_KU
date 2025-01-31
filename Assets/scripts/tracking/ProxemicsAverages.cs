@@ -12,19 +12,22 @@ public class ProxemicsAverages : Tracker
 
     public override IEnumerable<string> CustomHeader => new string[] { "distance_Average", "gaze_Average" };
     public List<float> trialGazeVals = new List<float>(), trialDistVals = new List<float>();
-
+    
+    //function to get mean values
     public float GetMean(List<float> vals)
     {
       return vals.Sum() / vals.Count;
     }
 
+    //record the averages
     void RecordAverage(UXFDataRow row)
     {
       proxemicsTracker = gameObject.GetComponent<trackFacing>();
 
       trialDistVals = proxemicsTracker.distVals;
       trialGazeVals = proxemicsTracker.gazeVals;
-
+      
+      //send values to results 
       row.Add(("distance_Average",GetMean(trialDistVals)));
       row.Add(("gaze_Average",GetMean(trialGazeVals)));
     }

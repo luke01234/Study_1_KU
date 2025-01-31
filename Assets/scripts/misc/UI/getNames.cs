@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class getNames : MonoBehaviour
 {
-    //helper script to get the names of experimenter and subject
+    //helper script to get the values from the start screen and hand them to uxf
     public Text experimenter, subject, testType;
     public toggleExclusive modelSelector;
     public toggleSkin skinToneSelector;

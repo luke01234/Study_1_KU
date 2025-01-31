@@ -46,6 +46,7 @@ public class initialText : MonoBehaviour
     }
     private IEnumerator DisableAfterDelay(float delay)
     {
+      //disable the text box after a delay
         yield return new WaitForSeconds(delay);
         gameObject.SetActive(false);
         enabled=false;

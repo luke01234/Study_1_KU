@@ -10,7 +10,5 @@ public class GenerateExperiment : MonoBehaviour
   public void Generate(Session uxfSession)
   {
     myBlock = uxfSession.CreateBlock(4);
-
-    
   }
 }

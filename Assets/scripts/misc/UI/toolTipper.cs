@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class toolTipper : MonoBehaviour
 {
     //This is a small helper UI script built to change the tool tip text on the startup depending on where the mouse is.
+    //each function is called depending on what the mouse is over
     public TextMeshProUGUI helperField;
     public void toolTipNone()
     {

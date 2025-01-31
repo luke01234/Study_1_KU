@@ -16,10 +16,11 @@ public class fallingRockSmash : MonoBehaviour
           parentParticle.Play();
           //Debug.Log("workin");
         }
-        if (other.gameObject.layer == LayerMask.NameToLayer("path") )//if it is a path play the audio with random pitch
+        if (other.gameObject.layer == LayerMask.NameToLayer("mountain") )
         {
+          //if it is a path play the audio with random pitch
           parentAudio = transform.parent.gameObject.GetComponent<AudioSource>();
-          parentAudio.pitch = Random.Range(0.6f,1.3f);
+          parentAudio.pitch = Random.Range(.75f,1.75f);
           parentAudio.Play();
         }
     }

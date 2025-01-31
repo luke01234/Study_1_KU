@@ -17,6 +17,7 @@ public class chooseAgent : MonoBehaviour
 
     void Start()
     {
+      //initialize variables
       male = transform.GetChild(0);
       female = transform.GetChild(1);
       maleRenderers = maleModel.GetComponentsInChildren<Renderer>();

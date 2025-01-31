@@ -3,6 +3,7 @@ using UXF;
 
 public class EndExperimentButton : MonoBehaviour
 {
+    //just a script to end the uxf session
     // Reference to the UXF session
     private Session session;
 

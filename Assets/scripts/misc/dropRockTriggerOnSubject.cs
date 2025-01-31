@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dropRockTriggerOnSubject : MonoBehaviour
 {
-    //script to drop rocks when the subject moves somewhere
+    //script to drop rocks when the subject moves through a trigger
 
     public GameObject child;
     void OnTriggerEnter(Collider other)

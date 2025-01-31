@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class playermovevr : MonoBehaviour
 {
+    //a script for the movement of the vr origin, this kind of goes unused as we do not plan to use controllers for the movement, rather just have the user walk around a room
     public float movementSpeed = 5f;
     public float rotationSpeed = 3f;
     public Camera playerCamera;

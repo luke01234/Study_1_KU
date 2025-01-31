@@ -5,8 +5,9 @@ using UnityEngine;
 public class rockAppear : MonoBehaviour
 {
     //script to make a rock appear on the path with particles to cover its appearance
-
+    //script made redundant after rockslide change
     private float startTime, currentTime, timeDif;
+    public float lifeTime = 3f;
     private ParticleSystem particles;
     private Renderer objRenderer;
     // Start is called before the first frame update
@@ -28,9 +29,9 @@ public class rockAppear : MonoBehaviour
       if (timeDif <= 7f)
       {
         currentTime=Time.time;
-        if (timeDif >= 3f)
+        if (timeDif >= lifeTime)
         {
-          objRenderer.enabled = true;
+          //objRenderer.enabled = true;
         }
       }
       else

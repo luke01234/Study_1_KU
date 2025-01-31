@@ -12,6 +12,7 @@ public class endTrialTrigger : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Subject"))
         {
         {
+            //get the current trial and end it, then turn this script off
            session.GetTrial().End();
            enabled=false;
            GetComponent<BoxCollider>().enabled=false;
